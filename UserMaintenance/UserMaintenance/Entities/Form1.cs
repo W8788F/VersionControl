@@ -18,7 +18,7 @@ namespace UserMaintenance.Entities
 
                 label1.Text = Resource1.LastName;
                 label2.Text = Resource1.FirstName;
-                button1.Text = Resource1.Add
+                button1.Text = Resource1.Add;
        
         }
     }
