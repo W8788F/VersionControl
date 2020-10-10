@@ -25,7 +25,7 @@ namespace Week5.Entities
             Portfolio.Add(new PortfolioItem() { Index = "ZWACK", Volume = 10 });
             Portfolio.Add(new PortfolioItem() { Index = "ELMU", Volume = 10 });
 
-            dataGridView2.DataSource = Portfolio;
+            dataGridView1.DataSource = Portfolio;
         }
     }
 }
