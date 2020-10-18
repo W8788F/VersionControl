@@ -18,12 +18,25 @@ namespace week06
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
 
-
-        
         public Form1()
         {
             InitializeComponent();
+
+            RefreshData();
+
+            CreateDiagramm();
+        }
+
+        private void RefreshData()
+        {
+            Rates.Clear();
+            GetExchangeRates();
             dataGridView1.DataSource = Rates;
+
+        }
+
+        private void GetExchangeRates()
+        {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
@@ -57,7 +70,6 @@ namespace week06
                     rate.Value = value / unit;
             }
 
-            CreateDiagramm();
         }
 
         private void CreateDiagramm()
@@ -77,6 +89,16 @@ namespace week06
             chartArea.AxisX.MajorGrid.Enabled = false;
             chartArea.AxisY.MajorGrid.Enabled = false;
             chartArea.AxisY.IsStartedFromZero = false;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
