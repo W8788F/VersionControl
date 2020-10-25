@@ -28,23 +28,11 @@ namespace week07
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
 
-            for (int year = 2005; year <= 2024; year++)
-            {
-                for (int i = 0; i < Population.Count; i++)
-                {
-                }
+        
 
-                int nbrOfMales = (from x in Population
-                                  where x.Gender == Gender.Male && x.IsAlive
-                                  select x).Count();
-                int nbrOfFemales = (from x in Population
-                                    where x.Gender == Gender.Female && x.IsAlive
-                                    select x).Count();
-                Console.WriteLine(
-                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
-            }
 
         }
+
 
         public List<DeathProbability> GetDeathProbabilities(string csvpath)
         {
@@ -138,6 +126,39 @@ namespace week07
                     újszülött.Gender = (Gender)(rng.Next(1, 3));
                     Population.Add(újszülött);
                 }
+            }
+        }
+
+        private void start_Click(object sender, EventArgs e)
+        {
+            Simulation();
+        }
+
+        private void Simulation()
+        {
+            for (int year = 2005; year <= 2024; year++)
+            {
+                for (int i = 0; i < Population.Count; i++)
+                {
+                }
+
+                int nbrOfMales = (from x in Population
+                                  where x.Gender == Gender.Male && x.IsAlive
+                                  select x).Count();
+                int nbrOfFemales = (from x in Population
+                                    where x.Gender == Gender.Female && x.IsAlive
+                                    select x).Count();
+                Console.WriteLine(
+                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
+            }
+        }
+
+        private void browse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog o = new OpenFileDialog();
+            if (o.ShowDialog() == DialogResult.OK)
+            {
+                utvonal.Text = o.FileName;
             }
         }
     }
