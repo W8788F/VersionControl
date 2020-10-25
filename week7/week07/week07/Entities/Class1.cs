@@ -25,4 +25,21 @@ namespace week07.Entities
         }
     }
 
+    public class BirthProbability
+    {
+        public int Age { get; set; }
+        public int NbrOfChildren { get; set; }
+        public double ChildP { get; set; }
+
+    }
+
+    public class DeathProbability
+    {
+        public Gender Gender { get; set; }
+        public int Age { get; set; }
+        public double DeathP { get; set; }
+    }
+
+
+
 }
