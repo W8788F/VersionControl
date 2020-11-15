@@ -37,6 +37,9 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.car_button = new System.Windows.Forms.Button();
+            this.ball_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -57,15 +60,48 @@
             // 
             this.conveyorTimer.Interval = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(61, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Coming next:";
+            // 
+            // car_button
+            // 
+            this.car_button.Location = new System.Drawing.Point(268, 23);
+            this.car_button.Name = "car_button";
+            this.car_button.Size = new System.Drawing.Size(114, 40);
+            this.car_button.TabIndex = 2;
+            this.car_button.Text = "Car";
+            this.car_button.UseVisualStyleBackColor = true;
+            this.car_button.Click += new System.EventHandler(this.car_button_Click);
+            // 
+            // ball_button
+            // 
+            this.ball_button.Location = new System.Drawing.Point(402, 23);
+            this.ball_button.Name = "ball_button";
+            this.ball_button.Size = new System.Drawing.Size(120, 40);
+            this.ball_button.TabIndex = 3;
+            this.ball_button.Text = "Ball";
+            this.ball_button.UseVisualStyleBackColor = true;
+            this.ball_button.Click += new System.EventHandler(this.ball_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(786, 516);
+            this.Controls.Add(this.ball_button);
+            this.Controls.Add(this.car_button);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.mainPanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -79,6 +115,9 @@
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer timer5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button car_button;
+        private System.Windows.Forms.Button ball_button;
     }
 }
 
