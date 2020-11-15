@@ -49,6 +49,7 @@
     <Compile Include="Abstractions\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Abstractions\Class2.cs" />
     <Compile Include="Entities\Class1.cs">
       <SubType>Component</SubType>
     </Compile>
