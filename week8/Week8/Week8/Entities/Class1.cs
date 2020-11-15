@@ -33,4 +33,13 @@ namespace Week8.Entities
             Left += 1;
         }
     }
+
+    public class BallFactory
+    {
+        public Ball CreateNew()
+        {
+            return new Ball();
+        }
+    }
+
 }
